@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 Carrot Staff
+
+  ul
+    for staff, i in records.staff
+      if i < 10
+        include templates/staff
+
+  button.more See more carrot staff!

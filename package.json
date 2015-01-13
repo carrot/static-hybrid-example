@@ -1,0 +1,17 @@
+{
+  "name": "carrots-example",
+  "description": "An example project demonstrating roots&#39; API interaction capabilities",
+  "dependencies": {
+    "autoprefixer-stylus": "0.4.x",
+    "axis": "0.3.x",
+    "client-templates": "^0.1.2",
+    "coffee-script": "1.8.x",
+    "css-pipeline": "0.1.x",
+    "jade": "1.x",
+    "js-pipeline": "0.1.x",
+    "marked": "0.3.x",
+    "roots-records": "0.1.x",
+    "rupture": "0.6.x",
+    "stylus": "0.49.x"
+  }
+}
