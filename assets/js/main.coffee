@@ -1,7 +1,7 @@
 staff = []
 
-$.get 'http://api.bycarrot.com/staff', (res) ->
-  staff = res.data[10..]
+$.get config.api_url, (res) ->
+  staff = res.data[config.static_items..]
 
 $('.more').on 'click', ->
   $('ul').append(templates.staff(staff: staff[0]))
