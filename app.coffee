@@ -5,10 +5,9 @@ js_pipeline  = require 'js-pipeline'
 css_pipeline = require 'css-pipeline'
 records      = require 'roots-records'
 templates    = require 'client-templates'
+config       = require 'roots-config'
 
-config =
-  api_url: 'http://api.bycarrot.com/staff'
-  static_items: 10
+api_url = 'http://api.bycarrot.com/staff'
 
 module.exports =
   ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore']
@@ -16,12 +15,10 @@ module.exports =
   extensions: [
     js_pipeline(files: 'assets/js/*.coffee'),
     css_pipeline(files: 'assets/css/*.styl'),
-    records(staff: { url: config.api_url, path: 'data' }),
-    templates(base: 'views/templates')
+    templates(base: 'views/templates'),
+    records(staff: { url: api_url, path: 'data' }),
+    config(api_url: api_url, static_items: 10)
   ]
-
-  locals:
-    config: config
 
   stylus:
     use: [axis(), rupture(), autoprefixer()]
