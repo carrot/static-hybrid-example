@@ -16,7 +16,10 @@ module.exports =
     js_pipeline(files: 'assets/js/*.coffee'),
     css_pipeline(files: 'assets/css/*.styl'),
     templates(base: 'views/templates'),
-    records(staff: { url: api_url, path: 'data' }),
+    records(staff:
+      url: api_url,
+      hook: (res) -> res.data,
+    ),
     config(api_url: api_url, static_items: 10)
   ]
 
